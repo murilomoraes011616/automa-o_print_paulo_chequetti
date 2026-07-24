@@ -56,7 +56,7 @@ aba.api.ExportAsFixedFormat(0, fr'C:\Users\murilo.oliveira\OneDrive - Greentech\
 #              │     ├── .PrintArea = 'C4:R20'
 #              │     ├── .Orientation = 2
 #              │     ├── .Zoom = False
-#              │     ├── .FitToPagesWide = 1
+#              │     ├── .FitToPagesWide = 1==
 #              │     └── .FitToPagesTall = 1
 #              └── .ExportAsFixedFormat(0, 'caminho.pdf')  (método, executa a exportação)
  
