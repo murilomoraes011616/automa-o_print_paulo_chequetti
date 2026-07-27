@@ -69,7 +69,7 @@ caminho_do_pdf= fr'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\
 with sync_playwright() as p:
     navegador = p.chromium.launch_persistent_context(
         caminho_da_sessao,
-        headless=True,
+        headless=False,
         channel="chrome"
     )
     pagina = navegador.new_page()
