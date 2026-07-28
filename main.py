@@ -7,7 +7,7 @@ import time # importa biblioteca para poder dar o comando de esperar 10 segundos
 app = xw.App(visible=False)   # cria a instância do Excel; visible=False roda em segundo plano
 app.display_alerts = False   # suprime qualquer alerta/pop-up do Excel, incluindo esse
 wb = app.books.open(
-    r'U:\AREA_DE_DADOS\Indicadores\Gestao de Contratos\FILIAL SP\KPI - Faturamento\Mapa de Faturamento\Mapa_Faturamento_SAPHANA_Automatizado_Murilo_Moraes.xlsm',
+    r'U:\AREA_DE_DADOS\Indicadores\Gestao de Contratos\FILIAL SP\KPI - Faturamento\Mapa de Faturamento\Mapa_Faturamento_SAPHANA_Automatizado_Murilo_Moraes.xlsm'
     update_links=0   # 0 = não atualiza vínculos automaticamente ao abrir, e não pergunta nada
 )
 
