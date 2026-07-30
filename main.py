@@ -63,7 +63,7 @@ aba.api.ExportAsFixedFormat(0, fr'C:\Users\murilo.oliveira\OneDrive - Greentech\
 from playwright.sync_api import sync_playwright
 
 caminho_da_sessao = r'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\sessao_whatsapp'
-nome_do_contato = "Murilo , da MITRA Assessoria IA"
+nome_do_contato = "Patricia Chefe"
 caminho_do_pdf= fr'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\pastas para coisas da  automações\arquivos da automação para o paulo chequeti\lugar dos pdf para autoamação\Mapa de Faturamento {hoje_formatado}.pdf'
 
 with sync_playwright() as p:
