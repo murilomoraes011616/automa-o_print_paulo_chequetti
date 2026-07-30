@@ -64,7 +64,7 @@ from playwright.sync_api import sync_playwright
 
 caminho_da_sessao = r'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\sessao_whatsapp'
 nome_do_contato = "Patricia Chefe"
-caminho_do_pdf= fr'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\pastas para coisas da  automações\arquivos da automação para o paulo chequeti\lugar dos pdf para autoamação\Mapa de Faturamento {hoje_formatado}.pdf'
+caminho_do_pdf= fr'\\viaduto.corp\fs\AREA_DE_DADOS\Indicadores\Gestao de Contratos\FILIAL SP\KPI - Faturamento\Mapa de Faturamento\Mapa_Faturamento_SAPHANA_Automatizado_Murilo_Moraes.xlsm'
 
 with sync_playwright() as p:
     navegador = p.chromium.launch_persistent_context(
