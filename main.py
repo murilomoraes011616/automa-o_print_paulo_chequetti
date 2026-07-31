@@ -73,7 +73,7 @@ with sync_playwright() as p:
         channel="chrome"
     )
     pagina = navegador.new_page()
-    pagina.set_default_timeout(60000)
+    pagina.set_default_timeout(150000)
 
     try:
         pagina.goto("https://web.whatsapp.com")
