@@ -137,5 +137,5 @@ with sync_playwright() as p:
         navegador.close()
         wb.save()
         wb.close()
-
+print("------ programa finalizado ------")
 
