@@ -25,7 +25,7 @@ time.sleep(25) #espera 10 segundos no codigo apenas para poder para garantir a a
 
 ##ETAPA DE TIRAR O PRINT DA IMAGEM DA TABELA 
 
-aba = wb.sheets('Indicador Faturamento-julho')   # 1. ele pega o wb.sheets na aba da tabela dinamica e trasnforma na variavel aba
+aba = wb.sheets('Indicador Faturamento-mês-atual')   # 1. ele pega o wb.sheets na aba da tabela dinamica e trasnforma na variavel aba
 
 aba.api.PageSetup.PrintArea = 'B2:Y20'             # chegamos em uma parte que a biblioteca nao traduziu, então criou uma especie de porta dos fundos, a api., que usando a aba que queremos, e ela, depois podemos dar comandos que o excel usa porem nao traduzidos, normalmente em VBA, fazendo que possamos continuar a  programar em python, o .PageSetup
 
