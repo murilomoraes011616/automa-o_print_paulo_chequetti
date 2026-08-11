@@ -82,7 +82,7 @@ inspetor = mail.GetInspector
 assinatura = mail.HTMLBody
 meu_texto = (
     f"Bom dia,<br><br>"
-    f"Segue o mapa de faturamento diário automatizado do dia: {data_de_hoje}. "
+    f"Segue o mapa de faturamento diário automatizado do dia: {data_de_hoje}. <br><br>"
     f"Atenciosamente Murilo Moraes, analista de dados.<br><br>"
 )
 mail.HTMLBody = meu_texto + assinatura
