@@ -99,9 +99,9 @@ print("--------")
 
 print("--------")
 lista_emails = [
-    "",
-    "",
-    "",
+    "patricia.pinheiro@greentech.log.br",
+    "rodrigo.ferrarezzo@greentech.log.br",
+
 ]
 mail.To = ";".join(lista_emails) #lista de destinatarios do email, o join formaata cada valor entre ;, pois e o formato que o COM do outlook aceita 
 destinatarios = mail.to 
@@ -109,29 +109,13 @@ print(f"5 - os destinatarios dos email são: {destinatarios}")
 print("--------")
 
 
-print("--------")
-lista_copias = [
-    "andre.santos@greentech.log.br", 
-    "rodrigo.ferrarezzo@greentech.log.br", 
-    "miguel.savtchen@greentech.log.br", 
-    "karina.palmieri@greentech.log.br", 
-    "marcelo.valerio@greentech.log.br", 
-    "patricia.pinheiro@greentech.log.br", 
-    "sarah@greentech.log.br",  
-    "elisabete.ferreira@greentech.log.br",  
-]
-mail.CC = ";".join(lista_copias) #lista de copias do email
-copias = mail.CC
-print(f"6 - as copias dos email são: {copias}")
-time.sleep(10)
-print("--------")
 
 
 
 print("--------")
-arquivo_MAPA_VENDAS = r'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\pastas para coisas da  automações\automação de tabela toda segunda\MAPA DE VENDAS.pdf'
-mail.Attachments.Add(arquivo_MAPA_VENDAS)
-print(arquivo_MAPA_VENDAS)
+arquivo_faturamento_diario = r'C:\Users\murilo.oliveira\OneDrive - Greentech\Perfil\Desktop\pastas para coisas da  automações\arquivos da automação para o paulo chequeti\lugar dos pdf para autoamação\Mapa de Faturamento diario.pdf'
+mail.Attachments.Add(arquivo_faturamento_diario)
+print(arquivo_faturamento_diario)
 
 print("esperando 10 segundos para poder abrir o display")
 time.sleep(10) #trocar para 30 segundos quando entrar em produção 
@@ -139,9 +123,8 @@ mail.Display()    #decidi colocar display pra poder dar o aval e conferir o emai
 print("--------")
 print(data_de_hoje)
 
-    finally:
-        navegador.close()
-        wb.save()
-        wb.close()
+
+wb.save()
+wb.close()
 print("------ programa finalizado ------")
 
