@@ -119,6 +119,5 @@ print(data_de_hoje)
 
 
 wb.save()
-wb.close()
 print("------ programa finalizado ------")
 
