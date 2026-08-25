@@ -103,7 +103,7 @@ lista_emails = [
     #"paulo.chequetti@greentech.log.br",
 ]
 mail.To = ";".join(lista_emails) #lista de destinatarios do email, o join formaata cada valor entre ;, pois e o formato que o COM do outlook aceita 
-destinatarios = mail.to 
+destinatarios = mail.To 
 print(f"5 - os destinatarios dos email são: {destinatarios}")
 print("--------")
 
