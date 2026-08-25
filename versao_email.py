@@ -66,7 +66,8 @@ import time
 
 #---------------------
 data_de_hoje = date.today()
-outlook = win32com.client.Dispatch("Outlook.Application") # apenas liga o python ao outlook 
+outlook = win32com.client.gencache.EnsureDispatch("Outlook.Application")
+#outlook = win32com.client.Dispatch("Outlook.Application") # apenas liga o python ao outlook 
 print("1 - conectado ao outlook") 
 #---------------------
 
@@ -95,10 +96,11 @@ print("--------")
 
 print("--------")
 lista_emails = [
-    "patricia.pinheiro@greentech.log.br",
-    "rodrigo.ferrarezzo@greentech.log.br",
-    "paulo.chequetti@greentech.log.br",
-
+    "nathiele.belo@greentech.log.br",
+    "ana.cardoso@greentech.log.br",
+    #"patricia.pinheiro@greentech.log.br",
+    #"rodrigo.ferrarezzo@greentech.log.br",
+    #"paulo.chequetti@greentech.log.br",
 ]
 mail.To = ";".join(lista_emails) #lista de destinatarios do email, o join formaata cada valor entre ;, pois e o formato que o COM do outlook aceita 
 destinatarios = mail.to 
@@ -112,7 +114,7 @@ print(arquivo_faturamento_diario)
 
 print("esperando 10 segundos para poder abrir o display")
 time.sleep(10) #trocar para 30 segundos quando entrar em produção 
-mail.Display()    #decidi colocar display pra poder dar o aval e conferir o email, mas futuramente vou mandar automaticamente 
+mail.Send()    #decidi colocar display pra poder dar o aval e conferir o email, mas futuramente vou mandar automaticamente 
 print("--------")
 print(data_de_hoje)
 
