@@ -135,10 +135,10 @@ print("--------")
 
 print("--------")
 lista_emails = [
-    "ana.cardoso@greentech.log.br",
-    #"patricia.pinheiro@greentech.log.br",
-    #"rodrigo.ferrarezzo@greentech.log.br",
-    #"paulo.chequetti@greentech.log.br",
+    #"ana.cardoso@greentech.log.br",
+    "patricia.pinheiro@greentech.log.br",
+    "rodrigo.ferrarezzo@greentech.log.br",
+    "paulo.chequetti@greentech.log.br",
 ]
 mail.To = ";".join(lista_emails) #lista de destinatarios do email, o join formaata cada valor entre ;, pois e o formato que o COM do outlook aceita 
 destinatarios = mail.To 
