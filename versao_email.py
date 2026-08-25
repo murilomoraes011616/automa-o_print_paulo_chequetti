@@ -76,21 +76,53 @@ print("--------")
 mail = outlook.CreateItem(0) #aqui ele segue a arvore, sendo outlook, ou outloo. aberto e crate item, que cria um item, o 0 significa o tipo de itrem, e 0 nesse caso significa email, entao a variavel email tem como resultado a criação de um email dentro do outlook 
 print("2 - mail criado") 
 
-
-
 print("--------")
-assinatura = mail.HTMLBody
 meu_texto = (
     f"Bom dia,<br><br>"
     f"Segue o mapa de faturamento diário automatizado do dia: {data_de_hoje}. <br><br>"
 )
-mail.HTMLBody = meu_texto + assinatura
-print("--------")
 
-print("--------")
-mail.Subject = f"mapa diário de faturamento do dia {data_de_hoje}." # feito para definir o assunto do email
-assunto_do_email = mail.Subject
-print(f"3 - o assunto do email é: {assunto_do_email}")
+import os
+import glob
+import re  # nova biblioteca: serve pra buscar/trocar texto usando padrões, não só texto exato
+
+PR_ATTACH_CONTENT_ID = "http://schemas.microsoft.com/mapi/proptag/0x3712001F"
+PR_ATTACHMENT_HIDDEN = "http://schemas.microsoft.com/mapi/proptag/0x7FFE000B"
+
+def montar_assinatura(mail, nome_assinatura=None):
+    pasta_assinaturas = os.path.join(os.environ["APPDATA"], "Microsoft", "Signatures")
+    arquivos_htm = glob.glob(os.path.join(pasta_assinaturas, "*.htm"))
+
+    if nome_assinatura:
+        arquivos_htm = [f for f in arquivos_htm if nome_assinatura.lower() in os.path.basename(f).lower()]
+    if not arquivos_htm:
+        return ""
+
+    caminho_htm = arquivos_htm[0]
+    pasta_imagens = os.path.splitext(caminho_htm)[0] + "_arquivos"
+
+    with open(caminho_htm, "r", encoding="utf-8", errors="ignore") as f:
+        html = f.read()
+
+    if os.path.isdir(pasta_imagens):
+        imagens = [f for f in os.listdir(pasta_imagens) if f.lower().endswith((".png", ".jpg", ".jpeg", ".gif"))]
+        if imagens:
+            imagem = imagens[0]
+            caminho_imagem = os.path.join(pasta_imagens, imagem)
+            cid = "assinatura_img"
+
+            anexo = mail.Attachments.Add(caminho_imagem)
+            anexo.PropertyAccessor.SetProperty(PR_ATTACH_CONTENT_ID, cid)
+            anexo.PropertyAccessor.SetProperty(PR_ATTACHMENT_HIDDEN, True)  # esconde da lista de anexos
+
+            # troca QUALQUER caminho que termine no nome da imagem (com pasta na frente ou não)
+            # pelo cid correto, não importa como o caminho está escrito no HTML
+            html = re.sub(r'src="[^"]*' + re.escape(imagem) + r'"', f'src="cid:{cid}"', html)
+
+    return html
+
+assinatura = montar_assinatura(mail)          # ← CHAMADA que faltava
+mail.HTMLBody = meu_texto + assinatura        # ← LINHA que faltava
 print("--------")
 
 print("--------")
@@ -120,4 +152,3 @@ print(data_de_hoje)
 
 wb.save()
 print("------ programa finalizado ------")
-
