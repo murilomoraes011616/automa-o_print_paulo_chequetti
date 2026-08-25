@@ -153,7 +153,7 @@ print(arquivo_faturamento_diario)
 print("esperando 10 segundos para poder abrir o display")
 time.sleep(10) #trocar para 30 segundos quando entrar em produção 
 mail.Send()    #decidi colocar display pra poder dar o aval e conferir o email, mas futuramente vou mandar automaticamente 
-outlook.GetNamespace("MAPI").SendAndReceive(False)
+outlook.GetNamespace("MAPI").SendAndReceive(False) #faz com que envie o email imediatamente, assim ele nao entra em demanda, oque visa previnir possiveis divergencias de horarios de quando o email e enviado e quando os destinatátios recebem.
 print("--------")
 print(data_de_hoje)
 
