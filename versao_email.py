@@ -82,6 +82,14 @@ meu_texto = (
     f"Segue o mapa de faturamento diário automatizado do dia: {data_de_hoje}. <br><br>"
 )
 
+
+print("--------")
+mail.Subject = f"mapa diário de faturamento do dia {data_de_hoje}." # feito para definir o assunto do email
+assunto_do_email = mail.Subject
+print(f"3 - o assunto do email é: {assunto_do_email}")
+print("--------")
+
+
 import os
 import glob
 import re  # nova biblioteca: serve pra buscar/trocar texto usando padrões, não só texto exato
@@ -127,7 +135,6 @@ print("--------")
 
 print("--------")
 lista_emails = [
-    "nathiele.belo@greentech.log.br",
     "ana.cardoso@greentech.log.br",
     #"patricia.pinheiro@greentech.log.br",
     #"rodrigo.ferrarezzo@greentech.log.br",
