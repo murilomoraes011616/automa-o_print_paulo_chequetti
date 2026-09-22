@@ -135,7 +135,7 @@ print("--------")
 
 print("--------")
 lista_emails = [
-    #"ana.cardoso@greentech.log.br",
+    "rafael.gomes@greentech.log.br",
     "patricia.pinheiro@greentech.log.br",
     "rodrigo.ferrarezzo@greentech.log.br",
     "paulo.chequetti@greentech.log.br",
