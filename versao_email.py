@@ -2,7 +2,7 @@
 import xlwings as xw # importa a biblioteca para manipular o excel .
 from datetime import date   # importa sobemente a função date da biblioteca datetime de pega a data, biblioteca do python ja.
 import time # importa biblioteca para poder dar o comando de esperar 10 segundos 
-
+from datetime import timedelta
 
 app = xw.App(visible=False)   # cria a instância do Excel; visible=False roda em segundo plano
 app.display_alerts = False   # suprime qualquer alerta/pop-up do Excel, incluindo esse
@@ -65,7 +65,7 @@ from datetime import date
 import time
 
 #---------------------
-data_de_hoje = date.today()
+data_de_hoje = date.today() - timedelta(days=1)
 outlook = win32com.client.gencache.EnsureDispatch("Outlook.Application")
 #outlook = win32com.client.Dispatch("Outlook.Application") # apenas liga o python ao outlook 
 print("1 - conectado ao outlook") 
